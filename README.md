@@ -57,6 +57,17 @@ uv run swea --base-url http://localhost:11434/v1 --model qwen3-coder:30b "…"
 
 Any model you use must support **tool/function calling** — that's the whole game here. Coder-tuned instruct models (Qwen3-Coder, Qwen2.5-Coder-32B, Devstral, GLM-4.x) work best.
 
+**Hosted APIs** work identically — anything OpenAI-compatible is fair game when the GPUs are busy:
+
+```bash
+SWEA_API_KEY="$OPENROUTER_API_KEY" swea \
+  --base-url https://openrouter.ai/api/v1 \
+  --model z-ai/glm-4.7-flash \
+  "fix the failing tests"
+```
+
+(`z-ai/glm-4.7-flash` at ~$0.06/M input tokens completes a small bug-fix session for well under a cent.)
+
 OpenCode users: the same endpoint plugs into an `@ai-sdk/openai-compatible` provider entry in `~/.config/opencode/opencode.json` — the harness and OpenCode can share one server.
 
 ## How it works

@@ -93,6 +93,10 @@ async def _amain(cfg: HarnessConfig, task: str | None, session) -> int:
     except openai.APIConnectionError:
         print(f"\nswea: cannot reach the model server at {cfg.base_url} — is it running?", file=sys.stderr)
         return 1
+    except openai.APIStatusError as e:
+        detail = e.message if isinstance(e.message, str) else e.body
+        print(f"\nswea: the server rejected the request (HTTP {e.status_code}): {detail}", file=sys.stderr)
+        return 1
 
 
 def _make_session(args: argparse.Namespace) -> SQLiteSession:
