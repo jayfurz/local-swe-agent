@@ -14,15 +14,15 @@ uv run swea "add a --verbose flag to cli.py and cover it with a test"
 
 # interactive REPL, different workspace, explicit endpoint + model
 uv run swea --workspace ~/code/myproj \
-            --base-url http://localhost:8009/v1 \
-            --model qwen3.5-27b \
+            --base-url http://localhost:8000/v1 \
+            --model my-coder-model \
 ```
 
 Configuration is flags > environment > defaults:
 
 | Flag | Env | Default |
 |---|---|---|
-| `--base-url` | `SWEA_BASE_URL`, `OPENAI_BASE_URL` | `http://localhost:8009/v1` |
+| `--base-url` | `SWEA_BASE_URL`, `OPENAI_BASE_URL` | `http://localhost:8000/v1` |
 | `--model` | `SWEA_MODEL` | auto-detected from `GET /v1/models` |
 | `--api-key` | `SWEA_API_KEY`, `OPENAI_API_KEY` | `local` |
 | `--workspace` | — | current directory |
@@ -33,17 +33,17 @@ Conversations persist with `--session NAME` (stored in `~/.local/share/swea/sess
 
 ## Serving a model
 
-**vLLM** (weights in `/mnt/data/models`, 2×GPU, tool calling on):
+**vLLM** (a Hugging Face repo id or a local weights directory, tool calling on):
 
 ```bash
-vllm serve /mnt/data/models/<model-dir> \
-  --served-model-name qwen3.5-27b \
-  --port 8009 \
-  --tensor-parallel-size 2 \
+vllm serve <hf-repo-or-weights-dir> \
+  --served-model-name my-coder-model \
   --max-model-len 32768 \
   --enable-auto-tool-choice \
   --tool-call-parser hermes
 ```
+
+Add `--tensor-parallel-size N` to split across N GPUs, `--port` if 8000 is taken.
 
 Notes: Qwen3/Qwen2.5 chat templates speak Hermes-style tool calls (`--tool-call-parser hermes`); **Qwen3-Coder** models need `--tool-call-parser qwen3_xml` instead. Pre-quantized AWQ/GPTQ checkpoints are auto-detected — do **not** pass `--quantization awq` (it pins the slower non-Marlin kernel).
 

@@ -7,7 +7,7 @@ import urllib.request
 from dataclasses import dataclass, field
 from pathlib import Path
 
-DEFAULT_BASE_URL = "http://localhost:8009/v1"
+DEFAULT_BASE_URL = "http://localhost:8000/v1"  # vLLM's default port; override via SWEA_BASE_URL
 DEFAULT_MAX_TURNS = 40
 DEFAULT_TEMPERATURE = 0.1
 
