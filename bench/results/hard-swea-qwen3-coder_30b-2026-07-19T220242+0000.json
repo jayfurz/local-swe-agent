@@ -1,0 +1,145 @@
+{
+  "harness": "swea",
+  "suite": "hard",
+  "model": "qwen3-coder:30b",
+  "base_url": "http://localhost:31134/v1",
+  "max_turns": 25,
+  "task_timeout": 600,
+  "started_at": "2026-07-19T22:02:42+00:00",
+  "total_passed": 11,
+  "total_tasks": 12,
+  "results": [
+    {
+      "task": "hard-lru-ttl",
+      "category": "hard-impl",
+      "passed": true,
+      "status": "max_turns",
+      "seconds": 101.2,
+      "tool_calls": 25,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-interval-ops",
+      "category": "hard-impl",
+      "passed": true,
+      "status": "ok",
+      "seconds": 15.8,
+      "tool_calls": 7,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-topo-sort",
+      "category": "hard-impl",
+      "passed": true,
+      "status": "ok",
+      "seconds": 51.4,
+      "tool_calls": 20,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-decimal-ledger",
+      "category": "hard-scratch",
+      "passed": true,
+      "status": "ok",
+      "seconds": 19.1,
+      "tool_calls": 8,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-state-machine",
+      "category": "hard-scratch",
+      "passed": true,
+      "status": "max_turns",
+      "seconds": 71.1,
+      "tool_calls": 25,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-config-merge",
+      "category": "hard-impl",
+      "passed": true,
+      "status": "max_turns",
+      "seconds": 52.1,
+      "tool_calls": 25,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-diff-apply",
+      "category": "hard-impl",
+      "passed": false,
+      "status": "max_turns",
+      "seconds": 115.4,
+      "tool_calls": 25,
+      "turns": null,
+      "check_output": "justin/.claude/jobs/d60f4ab2/tmp/hard-swea-qc/hard-diff-apply/_verify.py\", line 14, in test_append_at_end\n    self.assertEqual(apply_patch('a\\n', patch), 'a\\nb\\n')\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'ba\\n' != 'a\\nb\\n'\n- ba\n? -\n+ a\n+ b\n\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nFAILED (failures=1, errors=3)\n",
+      "agent_tail": "1] has a newline.\n  \u2502 So we need to strip the newline from the original\u2026\nPerfect! Now I understand. In unified diff format, context lines in the patch don't include the newline character, but the original lines do. Let me fix this:\n\u25b6 edit_file {\"path\":\"patcher.py\",\"old_string\":\"class PatchError(Exception):\\n pass\\n\\n\\ndef apply_patch(text, patch):\\n lines = text.splitlines(keepends=True)\\n \\n # Parse\u2026\n  \u2502 replaced 1 occurrence in patcher.py\n\nswea: stopped after 25 turns (raise with --max-turns)\n"
+    },
+    {
+      "task": "hard-perf-anagrams",
+      "category": "hard-perf",
+      "passed": true,
+      "status": "max_turns",
+      "seconds": 58.3,
+      "tool_calls": 25,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-thread-discount",
+      "category": "hard-multi",
+      "passed": true,
+      "status": "ok",
+      "seconds": 15.8,
+      "tool_calls": 12,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-bug-shared-cache",
+      "category": "hard-debug",
+      "passed": true,
+      "status": "ok",
+      "seconds": 19.1,
+      "tool_calls": 11,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-bug-aliasing",
+      "category": "hard-debug",
+      "passed": true,
+      "status": "ok",
+      "seconds": 13.2,
+      "tool_calls": 9,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-refactor-extract",
+      "category": "hard-multi",
+      "passed": true,
+      "status": "ok",
+      "seconds": 19.3,
+      "tool_calls": 13,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    }
+  ]
+}

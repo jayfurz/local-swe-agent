@@ -1,0 +1,145 @@
+{
+  "harness": "swea",
+  "suite": "hard",
+  "model": "z-ai/glm-4.7-flash",
+  "base_url": "https://openrouter.ai/api/v1",
+  "max_turns": 25,
+  "task_timeout": 600,
+  "started_at": "2026-07-19T21:50:26+00:00",
+  "total_passed": 8,
+  "total_tasks": 12,
+  "results": [
+    {
+      "task": "hard-lru-ttl",
+      "category": "hard-impl",
+      "passed": true,
+      "status": "ok",
+      "seconds": 29.9,
+      "tool_calls": 6,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-interval-ops",
+      "category": "hard-impl",
+      "passed": false,
+      "status": "ok",
+      "seconds": 323.0,
+      "tool_calls": 17,
+      "turns": null,
+      "check_output": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                     [(1, 4), (8, 9)])\n                     ^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: [(1, 4), (7, 9)] != [(1, 4), (8, 9)]\n\nFirst differing element 1:\n(7, 9)\n(8, 9)\n\n- [(1, 4), (7, 9)]\n?           ^\n\n+ [(1, 4), (8, 9)]\n?           ^\n\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nFAILED (failures=1)\n",
+      "agent_tail": " {\"command\": \"python -m pytest test_intervals.py -v\", \"timeout_s\": 10}\n  \u2502 exit code: 1\n  \u2502 ============================= test session starts ==============================\n  \u2502 platform linux -- Python 3.13.11, pytest-9.1.1, pluggy-1.6.0 -- /mnt/data/code/local-swe-agent/.venv/bin/python\n  \u2502 cachedir: .pytest_cache\n  \u2502 rootdir: /home/justin/.claude/jobs/d60f4ab2/tmp/hard-glm/hard-interval-ops\n  \u2502 plugins: asyncio-1.4.0, anyio-4.14.2\n  \u2502 asyncio: mode=Mode.STRICT, debug=False, asyncio_default_f\u2026\n"
+    },
+    {
+      "task": "hard-topo-sort",
+      "category": "hard-impl",
+      "passed": false,
+      "status": "ok",
+      "seconds": 260.6,
+      "tool_calls": 7,
+      "turns": null,
+      "check_output": "in test_implicit_nodes\n    check({'x': ['y']})\n    ~~~~~^^^^^^^^^^^^^^\n  File \"/home/justin/.claude/jobs/d60f4ab2/tmp/hard-glm/hard-topo-sort/_verify.py\", line 12, in check\n    assert pos[d] < pos[n], f'{d} must precede {n}'\n           ^^^^^^^^^^^^^^^\nAssertionError: y must precede x\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nFAILED (failures=2)\n",
+      "agent_tail": " bash {\"command\": \"python -m pytest test_topo.py -v\", \"timeout_s\": 10}\n  \u2502 exit code: 1\n  \u2502 ============================= test session starts ==============================\n  \u2502 platform linux -- Python 3.13.11, pytest-9.1.1, pluggy-1.6.0 -- /mnt/data/code/local-swe-agent/.venv/bin/python\n  \u2502 cachedir: .pytest_cache\n  \u2502 rootdir: /home/justin/.claude/jobs/d60f4ab2/tmp/hard-glm/hard-topo-sort\n  \u2502 plugins: asyncio-1.4.0, anyio-4.14.2\n  \u2502 asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixt\u2026\n"
+    },
+    {
+      "task": "hard-decimal-ledger",
+      "category": "hard-scratch",
+      "passed": true,
+      "status": "ok",
+      "seconds": 46.3,
+      "tool_calls": 7,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-state-machine",
+      "category": "hard-scratch",
+      "passed": true,
+      "status": "ok",
+      "seconds": 61.7,
+      "tool_calls": 13,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-config-merge",
+      "category": "hard-impl",
+      "passed": false,
+      "status": "ok",
+      "seconds": 45.0,
+      "tool_calls": 6,
+      "turns": null,
+      "check_output": "  self.assertEqual(merge({'a': 1, 'b': 2}, {'a': None, 'zz': None}),\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                     {'b': 2})\n                     ^^^^^^^^^\nAssertionError: {'b': 2, 'zz': None} != {'b': 2}\n- {'b': 2, 'zz': None}\n+ {'b': 2}\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nFAILED (failures=2)\n",
+      "agent_tail": "rride value is `None`, the key is removed\n5. **Lists handle appending** - if override list starts with `'+append'`, remaining elements are appended to the base list (or `[]` if key is new); otherwise the list is replaced\n\n**Verification:**\n- All 2 provided tests pass (`test_nested` and `test_append`)\n- Manual tests confirmed:\n  - Inputs remain unchanged after merge\n  - None values correctly delete keys\n  - New keys are added properly\n  - Append behavior works for both existing and new list keys\n"
+    },
+    {
+      "task": "hard-diff-apply",
+      "category": "hard-impl",
+      "passed": false,
+      "status": "ok",
+      "seconds": 103.6,
+      "tool_calls": 3,
+      "turns": null,
+      "check_output": "    self.assertEqual(apply_patch('a\\nb\\nc\\nd\\n', patch), 'a\\nb\\nC\\nd\\n')\n                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/justin/.claude/jobs/d60f4ab2/tmp/hard-glm/hard-diff-apply/patcher.py\", line 6, in apply_patch\n    raise NotImplementedError\nNotImplementedError\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (errors=5)\n",
+      "agent_tail": " \u2502      6\t    def test_replace(self):\n  \u2502      7\t        patch = '@@ -2,2 +2,2 @@\\n b\\n-c\\n+C\\n'\n  \u2502      8\t        self.assertEqual(apply_patch('a\\nb\\nc\\nd\\n', patch), 'a\\nb\\nC\\nd\\n')\n  \u2502      9\t    def test_mismatch(self):\n  \u2502     10\t        patch = '@@ -1,1 +1,1 @@\\n-x\\n+y\\n'\n  \u2502     11\t      \u2026\n\u25b6 read_file {\"path\": \"patcher.py\"}\n  \u2502      1\tclass PatchError(Exception):\n  \u2502      2\t    pass\n  \u2502      3\t\n  \u2502      4\t\n  \u2502      5\tdef apply_patch(text, patch):\n  \u2502      6\t    raise NotImplementedError\n"
+    },
+    {
+      "task": "hard-perf-anagrams",
+      "category": "hard-perf",
+      "passed": true,
+      "status": "ok",
+      "seconds": 13.9,
+      "tool_calls": 6,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-thread-discount",
+      "category": "hard-multi",
+      "passed": true,
+      "status": "ok",
+      "seconds": 17.1,
+      "tool_calls": 12,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-bug-shared-cache",
+      "category": "hard-debug",
+      "passed": true,
+      "status": "ok",
+      "seconds": 16.3,
+      "tool_calls": 8,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-bug-aliasing",
+      "category": "hard-debug",
+      "passed": true,
+      "status": "ok",
+      "seconds": 19.8,
+      "tool_calls": 8,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-refactor-extract",
+      "category": "hard-multi",
+      "passed": true,
+      "status": "ok",
+      "seconds": 25.3,
+      "tool_calls": 18,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    }
+  ]
+}

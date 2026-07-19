@@ -1,0 +1,145 @@
+{
+  "harness": "opencode",
+  "suite": "hard",
+  "model": "qwen36-bench",
+  "base_url": "http://localhost:31134/v1",
+  "max_turns": 12,
+  "task_timeout": 600,
+  "started_at": "2026-07-19T22:11:55+00:00",
+  "total_passed": 10,
+  "total_tasks": 12,
+  "results": [
+    {
+      "task": "hard-lru-ttl",
+      "category": "hard-impl",
+      "passed": true,
+      "status": "ok",
+      "seconds": 38.6,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-interval-ops",
+      "category": "hard-impl",
+      "passed": true,
+      "status": "ok",
+      "seconds": 25.3,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-topo-sort",
+      "category": "hard-impl",
+      "passed": true,
+      "status": "ok",
+      "seconds": 17.5,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-decimal-ledger",
+      "category": "hard-scratch",
+      "passed": true,
+      "status": "ok",
+      "seconds": 13.6,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-state-machine",
+      "category": "hard-scratch",
+      "passed": false,
+      "status": "ok",
+      "seconds": 24.2,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "e/justin/.claude/jobs/d60f4ab2/tmp/hard-oc-q36/hard-state-machine/_verify.py\", line 49, in test_refund_due_flag\n    self.assertFalse(build('cancelled_plain').refund_due)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'refund_due'\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nFAILED (errors=2)\n",
+      "agent_tail": "til/colors\u001b[0m\u001b[2m:\u001b[0m\u001b[33m24\u001b[0m\u001b[2m:\u001b[33m16\u001b[0m\u001b[2m)\u001b[0m\n\u001b[0m      \u001b[2mat \u001b[0m\u001b[0m\u001b[1m\u001b[3minternal:assert/assertion_error\u001b[0m\u001b[2m (\u001b[0m\u001b[0m\u001b[36minternal:assert/assertion_error\u001b[0m\u001b[2m:\u001b[0m\u001b[33m2\u001b[0m\u001b[2m:\u001b[33m187\u001b[0m\u001b[2m)\u001b[0m\n\u001b[0m      \u001b[2mat \u001b[0m\u001b[0m\u001b[1m\u001b[3mloadAssertionError\u001b[0m\u001b[2m (\u001b[0m\u001b[0m\u001b[36mnode:assert\u001b[0m\u001b[2m:\u001b[0m\u001b[33m28\u001b[0m\u001b[2m:\u001b[33m96\u001b[0m\u001b[2m)\u001b[0m\n\n\u001b[0m\n> build \u00b7 qwen36-bench\n\u001b[0m\n\u001b[0m\u2192 \u001b[0mRead .\n\u001b[0m\u2192 \u001b[0mRead README.md\n\u001b[0m\n\u001b[0m\u2190 \u001b[0mWrite orders.py\nWrote file successfully.\n\u001b[0m\n"
+    },
+    {
+      "task": "hard-config-merge",
+      "category": "hard-impl",
+      "passed": true,
+      "status": "ok",
+      "seconds": 20.7,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-diff-apply",
+      "category": "hard-impl",
+      "passed": false,
+      "status": "ok",
+      "seconds": 36.0,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "q36/hard-diff-apply/_verify.py\", line 8, in test_replace_middle\n    self.assertEqual(apply_patch('a\\nb\\nc\\nd\\n', patch), 'a\\nb\\nC\\nd\\n')\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'a\\nC\\n\\nc\\nd\\n' != 'a\\nb\\nC\\nd\\n'\n  a\n+ b\n  C\n- \n- c\n  d\n\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nFAILED (failures=3)\n",
+      "agent_tail": " + 1}: \"\n+                    f\"expected '{content}', got '{new_lines_list[orig_offset]}'\"\n+                )\n+            # Remove this line: splice it out\n+            new_lines_list.pop(orig_offset)\n+        elif prefix == '+':\n+            # Added line\n+            new_lines_list.insert(orig_offset, content + '\\n')\n+        else:\n+            raise PatchError(f\"Invalid hunk body line prefix: {prefix!r}\")\n+\n+        i += 1\n+\n+    return ''.join(new_lines_list)\n\n\u001b[0m\n\u001b[0m\u2192 \u001b[0mRead patcher.py\n"
+    },
+    {
+      "task": "hard-perf-anagrams",
+      "category": "hard-perf",
+      "passed": true,
+      "status": "ok",
+      "seconds": 16.8,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-thread-discount",
+      "category": "hard-multi",
+      "passed": true,
+      "status": "ok",
+      "seconds": 25.1,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-bug-shared-cache",
+      "category": "hard-debug",
+      "passed": true,
+      "status": "ok",
+      "seconds": 17.6,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-bug-aliasing",
+      "category": "hard-debug",
+      "passed": true,
+      "status": "ok",
+      "seconds": 17.0,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-refactor-extract",
+      "category": "hard-multi",
+      "passed": true,
+      "status": "ok",
+      "seconds": 34.3,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    }
+  ]
+}

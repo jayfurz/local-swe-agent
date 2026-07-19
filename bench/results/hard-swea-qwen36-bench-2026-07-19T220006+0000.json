@@ -1,0 +1,145 @@
+{
+  "harness": "swea",
+  "suite": "hard",
+  "model": "qwen36-bench",
+  "base_url": "http://localhost:31134/v1",
+  "max_turns": 25,
+  "task_timeout": 600,
+  "started_at": "2026-07-19T22:00:06+00:00",
+  "total_passed": 7,
+  "total_tasks": 12,
+  "results": [
+    {
+      "task": "hard-lru-ttl",
+      "category": "hard-impl",
+      "passed": true,
+      "status": "ok",
+      "seconds": 12.0,
+      "tool_calls": 6,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-interval-ops",
+      "category": "hard-impl",
+      "passed": false,
+      "status": "ok",
+      "seconds": 9.8,
+      "tool_calls": 6,
+      "turns": null,
+      "check_output": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                     [(1, 4), (8, 9)])\n                     ^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: [(1, 4), (7, 9)] != [(1, 4), (8, 9)]\n\nFirst differing element 1:\n(7, 9)\n(8, 9)\n\n- [(1, 4), (7, 9)]\n?           ^\n\n+ [(1, 4), (8, 9)]\n?           ^\n\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nFAILED (failures=1)\n",
+      "agent_tail": "Implemented `merge_intervals` and `subtract_intervals`.\n\n- **`merge_intervals(pairs)`**: Sorts intervals by start, then iteratively merges overlapping or adjacent ones into a sorted list of disjoint half-open `[start, end)` intervals.\n- **`subtract_intervals(a, b)`**: For each interval in normalized `a`, removes any coverage from normalized `b` using a sweep-line approach, returning the remaining disjoint parts.\n\n**Verification**: Both unit tests (`test_merge`, `test_subtract`) pass via pytest.\n"
+    },
+    {
+      "task": "hard-topo-sort",
+      "category": "hard-impl",
+      "passed": true,
+      "status": "ok",
+      "seconds": 13.7,
+      "tool_calls": 8,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-decimal-ledger",
+      "category": "hard-scratch",
+      "passed": false,
+      "status": "ok",
+      "seconds": 3.6,
+      "tool_calls": 1,
+      "turns": null,
+      "check_output": "Traceback (most recent call last):\n  File \u001b[35m\"/home/justin/.claude/jobs/d60f4ab2/tmp/hard-swea-q36/hard-decimal-ledger/_verify.py\"\u001b[0m, line \u001b[35m3\u001b[0m, in \u001b[35m<module>\u001b[0m\n    from ledger import balances\n\u001b[1;35mModuleNotFoundError\u001b[0m: \u001b[35mNo module named 'ledger'\u001b[0m\n",
+      "agent_tail": "tmp/hard-swea-q36/hard-decimal-ledger\n\u25b6 read_file {\"path\":\"transactions.txt\"}\n  \u2502      1\t# sample ledger\n  \u2502      2\tcash 5.00\n  \u2502      3\tcash $4.50\n  \u2502      4\tcash 0.50\n  \u2502      5\tcash (0.05)\n  \u2502      6\t\n  \u2502      7\tbank $1,234.56\n  \u2502      8\tbank (234.56)\nPlan: I'll create `ledger.py` with a `balances(path)` function that parses the transaction file format, handles commas, `$`, parentheses for negatives, and returns balances as `decimal.Decimal`. Then I'll verify it against `transactions.txt`.\n\n\n"
+    },
+    {
+      "task": "hard-state-machine",
+      "category": "hard-scratch",
+      "passed": false,
+      "status": "ok",
+      "seconds": 16.5,
+      "tool_calls": 6,
+      "turns": null,
+      "check_output": "justin/.claude/jobs/d60f4ab2/tmp/hard-swea-q36/hard-state-machine/_verify.py\", line 49, in test_refund_due_flag\n    self.assertFalse(build('cancelled_plain').refund_due)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'refund_due'\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nFAILED (errors=2)\n",
+      "agent_tail": "transition(order, action)` mutates the order through valid state transitions, sets `refund_due=True` when cancelling from `paid`, and only allows refund from `cancelled` if `refund_due` is True. Appends `(action, new_state)` to history on success; nothing on failure.\n\n**Verification:** Wrote 8 unit tests covering initial state, full lifecycle, cancel paths (new vs paid), refund with/without `refund_due`, invalid transition error messages, and history not being appended on failure \u2014 all passing.\n"
+    },
+    {
+      "task": "hard-config-merge",
+      "category": "hard-impl",
+      "passed": false,
+      "status": "ok",
+      "seconds": 19.7,
+      "tool_calls": 11,
+      "turns": null,
+      "check_output": "config-merge/_verify.py\", line 9, in test_append_missing_base\n    self.assertEqual(merge({}, {'l': ['+append', 1]}), {'l': [1]})\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: {'l': ['+append', 1]} != {'l': [1]}\n- {'l': ['+append', 1]}\n+ {'l': [1]}\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nFAILED (failures=1)\n",
+      "agent_tail": "ve dict merge**: When both base and override values are dicts, recurse into them.\n2. **Scalar/list overwrite**: Override scalars replace base values; lists replace entirely unless the first element is `'+append'`, in which case remaining elements are appended to the base list.\n3. **None deletes keys**: A `None` value in override removes the key (or does nothing if missing). Keys only in base are preserved as-is.\n\n**Verification:** Both provided unit tests (`test_nested` and `test_append`) pass.\n"
+    },
+    {
+      "task": "hard-diff-apply",
+      "category": "hard-impl",
+      "passed": true,
+      "status": "ok",
+      "seconds": 22.4,
+      "tool_calls": 10,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-perf-anagrams",
+      "category": "hard-perf",
+      "passed": true,
+      "status": "ok",
+      "seconds": 10.5,
+      "tool_calls": 7,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-thread-discount",
+      "category": "hard-multi",
+      "passed": true,
+      "status": "ok",
+      "seconds": 13.6,
+      "tool_calls": 13,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-bug-shared-cache",
+      "category": "hard-debug",
+      "passed": true,
+      "status": "ok",
+      "seconds": 9.1,
+      "tool_calls": 7,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "hard-bug-aliasing",
+      "category": "hard-debug",
+      "passed": false,
+      "status": "ok",
+      "seconds": 10.1,
+      "tool_calls": 8,
+      "turns": null,
+      "check_output": "d60f4ab2/tmp/hard-swea-q36/hard-bug-aliasing/_verify.py\", line 14, in test_caller_list_not_mutated\n    self.assertEqual(data, [3, 1, 2])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: [3, 2, 1] != [3, 1, 2]\n\nFirst differing element 1:\n2\n1\n\n- [3, 2, 1]\n+ [3, 1, 2]\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nFAILED (failures=1)\n",
+      "agent_tail": "ds `scores[0]`, the list has been sorted descending, so it returns the highest score (9) instead of the first submitted one (5).\n\n**Fix:** In `contest.py`, capture `first_submitted = scores[0]` *before* calling `top_n(scores, 3)`, then return that captured value. This is a minimal one-line change that preserves the original submission order for the `first_submitted` field while still getting correctly sorted winners.\n\n**Verification:** All tests pass (`test_contest.py::T::test_summary PASSED`).\n"
+    },
+    {
+      "task": "hard-refactor-extract",
+      "category": "hard-multi",
+      "passed": true,
+      "status": "ok",
+      "seconds": 14.9,
+      "tool_calls": 11,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    }
+  ]
+}
