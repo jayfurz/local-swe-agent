@@ -1,0 +1,311 @@
+{
+  "model": "qwen36-bench",
+  "base_url": "http://localhost:31134/v1",
+  "max_turns": 12,
+  "task_timeout": 300,
+  "started_at": "2026-07-19T20:58:19+00:00",
+  "total_passed": 29,
+  "total_tasks": 30,
+  "results": [
+    {
+      "task": "fix-median-sort",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 7.9,
+      "tool_calls": 5,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-sum-range",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 7.2,
+      "tool_calls": 5,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-binary-search",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 9.4,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-mutable-default",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 9.4,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-title-case",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 7.6,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-missing-key",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 9.4,
+      "tool_calls": 7,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-fib-base",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 7.5,
+      "tool_calls": 5,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-int-division",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 7.2,
+      "tool_calls": 5,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-inverted-filter",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 6.9,
+      "tool_calls": 5,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-chunk-slice",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 7.4,
+      "tool_calls": 5,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "impl-rle-encode",
+      "category": "implement",
+      "passed": true,
+      "status": "ok",
+      "seconds": 8.3,
+      "tool_calls": 5,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "impl-balanced-parens",
+      "category": "implement",
+      "passed": true,
+      "status": "ok",
+      "seconds": 10.5,
+      "tool_calls": 7,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "impl-roman-to-int",
+      "category": "implement",
+      "passed": true,
+      "status": "ok",
+      "seconds": 8.2,
+      "tool_calls": 5,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "impl-flatten",
+      "category": "implement",
+      "passed": true,
+      "status": "ok",
+      "seconds": 7.7,
+      "tool_calls": 5,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "impl-caesar",
+      "category": "implement",
+      "passed": true,
+      "status": "ok",
+      "seconds": 8.4,
+      "tool_calls": 5,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "impl-word-freq",
+      "category": "implement",
+      "passed": true,
+      "status": "ok",
+      "seconds": 11.6,
+      "tool_calls": 7,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "feat-dedupe-keep-last",
+      "category": "feature",
+      "passed": true,
+      "status": "ok",
+      "seconds": 11.1,
+      "tool_calls": 7,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "feat-validate-negative",
+      "category": "feature",
+      "passed": true,
+      "status": "ok",
+      "seconds": 11.2,
+      "tool_calls": 7,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "feat-stack-peek",
+      "category": "feature",
+      "passed": true,
+      "status": "ok",
+      "seconds": 9.4,
+      "tool_calls": 5,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "feat-parse-dates",
+      "category": "feature",
+      "passed": true,
+      "status": "ok",
+      "seconds": 12.9,
+      "tool_calls": 9,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "feat-max-key",
+      "category": "feature",
+      "passed": true,
+      "status": "ok",
+      "seconds": 15.6,
+      "tool_calls": 11,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "feat-sort-reverse-flag",
+      "category": "feature",
+      "passed": true,
+      "status": "ok",
+      "seconds": 14.2,
+      "tool_calls": 10,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "ref-rename-function",
+      "category": "refactor",
+      "passed": true,
+      "status": "ok",
+      "seconds": 8.8,
+      "tool_calls": 8,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "ref-extract-constant",
+      "category": "refactor",
+      "passed": true,
+      "status": "ok",
+      "seconds": 8.6,
+      "tool_calls": 5,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "ref-remove-dead-code",
+      "category": "refactor",
+      "passed": true,
+      "status": "ok",
+      "seconds": 8.5,
+      "tool_calls": 7,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "ref-bare-except",
+      "category": "refactor",
+      "passed": true,
+      "status": "ok",
+      "seconds": 14.3,
+      "tool_calls": 9,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "new-csv-stats",
+      "category": "scratch",
+      "passed": true,
+      "status": "ok",
+      "seconds": 7.1,
+      "tool_calls": 4,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "new-json-to-csv",
+      "category": "scratch",
+      "passed": false,
+      "status": "ok",
+      "seconds": 4.5,
+      "tool_calls": 2,
+      "check_output": "qual(r.returncode, 0, r.stderr)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 2 != 0 : /mnt/data/code/local-swe-agent/.venv/bin/python3: can't open file '/home/justin/.claude/jobs/d60f4ab2/tmp/bench-ws/new-json-to-csv/convert.py': [Errno 2] No such file or directory\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.012s\n\nFAILED (failures=1)\n",
+      "agent_tail": "swea \u00b7 model=qwen36-bench \u00b7 base=http://localhost:31134/v1 \u00b7 workspace=/home/justin/.claude/jobs/d60f4ab2/tmp/bench-ws/new-json-to-csv\n\u25b6 list_dir {\"path\":\".\"}\n  \u2502 input.json\n\u25b6 read_file {\"path\":\"input.json\"}\n  \u2502      1\t[{\"id\": 3, \"name\": \"carol\"}, {\"id\": 1, \"name\": \"alice\"}, {\"id\": 2, \"name\": \"bob\"}]\n"
+    },
+    {
+      "task": "new-wordcount-cli",
+      "category": "scratch",
+      "passed": true,
+      "status": "ok",
+      "seconds": 7.4,
+      "tool_calls": 4,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "new-utils-package",
+      "category": "scratch",
+      "passed": true,
+      "status": "ok",
+      "seconds": 8.5,
+      "tool_calls": 4,
+      "check_output": "",
+      "agent_tail": ""
+    }
+  ]
+}

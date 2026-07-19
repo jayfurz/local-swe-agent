@@ -90,6 +90,16 @@ Design choices that matter for local models:
 - **Model-visible errors**: tools never raise; they return `error: …` strings so the model reads the failure and adapts instead of crashing the run.
 - **Workspace jail for file tools**: paths resolving outside `--workspace` are refused. `bash` runs with the workspace as cwd but is *not* sandboxed — run it in a container/VM if you don't trust the model or the task.
 
+## Benchmark
+
+`bench/` holds a 30-task SWE benchmark (bug fixes, implement-from-tests, feature additions, refactors, build-from-scratch). Each task runs in a fresh workspace; verification files are written **after** the agent finishes — clobbering any tampering with visible tests — and extra hidden edge cases decide the pass:
+
+```bash
+uv run python bench/run.py --base-url http://localhost:11434/v1 --model qwen3-coder:30b
+```
+
+Results land in `bench/results/*.json` with per-task pass/fail, wall time, and tool-call counts.
+
 ## Tests
 
 ```bash
