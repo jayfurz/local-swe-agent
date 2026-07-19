@@ -18,7 +18,10 @@ from .tools import ALL_TOOLS, Workspace
 def build_agent(cfg: HarnessConfig) -> Agent[Workspace]:
     # No OpenAI key in play: without this the SDK tries to upload traces and 401s.
     set_tracing_disabled(True)
-    client = AsyncOpenAI(base_url=cfg.base_url, api_key=cfg.api_key)
+    # Local servers can wedge mid-run; without a client timeout a dead request
+    # hangs the whole task. 180s still allows slow cold model loads.
+    client = AsyncOpenAI(base_url=cfg.base_url, api_key=cfg.api_key,
+                         timeout=180.0, max_retries=1)
     return Agent[Workspace](
         name="swea",
         instructions=SYSTEM_PROMPT,

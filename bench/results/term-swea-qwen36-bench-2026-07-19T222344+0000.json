@@ -1,0 +1,123 @@
+{
+  "harness": "swea",
+  "suite": "term",
+  "model": "qwen36-bench",
+  "base_url": "http://localhost:31134/v1",
+  "max_turns": 25,
+  "task_timeout": 420,
+  "started_at": "2026-07-19T22:23:44+00:00",
+  "total_passed": 9,
+  "total_tasks": 10,
+  "results": [
+    {
+      "task": "term-log-top-ips",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 7.1,
+      "tool_calls": 3,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-crlf-script",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 10.8,
+      "tool_calls": 9,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-git-blame-hunt",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 15.0,
+      "tool_calls": 13,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-restore-deleted",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 8.1,
+      "tool_calls": 8,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-photo-rename",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 7.8,
+      "tool_calls": 4,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-dedupe-files",
+      "category": "terminal",
+      "passed": false,
+      "status": "ok",
+      "seconds": 24.8,
+      "tool_calls": 14,
+      "turns": null,
+      "check_output": "36/term-dedupe-files/_verify.py\", line 10, in test_deduped\n    self.assertEqual(len(files), 22, 'should keep one file per unique content')\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 21 != 22 : should keep one file per unique content\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+      "agent_tail": "\"content\":\"9\\n\",\"path\":\"answer.txt\"}\n  \u2502 wrote 2 chars to answer.txt\n\u25b6 read_file {\"path\":\"answer.txt\"}\n  \u2502      1\t9\nDone. Here's the report:\n\n**What changed:** Deleted 9 duplicate files from `downloads/` so that exactly one file per unique content remains. The duplicates were identified by MD5 hash \u2014 groups of identical-content files had all but one member removed.\n\n**Verification:** Confirmed no remaining duplicate hashes exist (all md5sums are unique), and wrote the count `9` to `answer.txt`.\n"
+    },
+    {
+      "task": "term-archive-needle",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 46.4,
+      "tool_calls": 23,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-perms-exec",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 6.5,
+      "tool_calls": 5,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-broken-symlink",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 5.9,
+      "tool_calls": 5,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-grep-todo",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 14.6,
+      "tool_calls": 9,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    }
+  ]
+}

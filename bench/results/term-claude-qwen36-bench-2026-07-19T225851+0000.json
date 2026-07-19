@@ -1,0 +1,123 @@
+{
+  "harness": "claude",
+  "suite": "term",
+  "model": "qwen36-bench",
+  "base_url": "http://localhost:31134/v1",
+  "max_turns": 12,
+  "task_timeout": 420,
+  "started_at": "2026-07-19T22:58:51+00:00",
+  "total_passed": 9,
+  "total_tasks": 10,
+  "results": [
+    {
+      "task": "term-log-top-ips",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 13.2,
+      "tool_calls": null,
+      "turns": 3,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-crlf-script",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 27.4,
+      "tool_calls": null,
+      "turns": 8,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-git-blame-hunt",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 84.4,
+      "tool_calls": null,
+      "turns": 22,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-restore-deleted",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 27.2,
+      "tool_calls": null,
+      "turns": 9,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-photo-rename",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 19.4,
+      "tool_calls": null,
+      "turns": 5,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-dedupe-files",
+      "category": "terminal",
+      "passed": false,
+      "status": "ok",
+      "seconds": 47.1,
+      "tool_calls": null,
+      "turns": 11,
+      "check_output": "36/term-dedupe-files/_verify.py\", line 10, in test_deduped\n    self.assertEqual(len(files), 22, 'should keep one file per unique content')\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 21 != 22 : should keep one file per unique content\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+      "agent_tail": "1,\"outputTokens\":1188,\"cacheReadInputTokens\":0,\"cacheCreationInputTokens\":0,\"webSearchRequests\":0,\"costUSD\":1.2861049999999998,\"contextWindow\":200000,\"maxOutputTokens\":32000}},\"permission_denials\":[],\"terminal_reason\":\"completed\",\"fast_mode_state\":\"off\",\"uuid\":\"fda1202f-ed94-4886-9777-b7007f2f7fe8\"}\n\u001b[33m\u26a0 claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login \u00b7 Unset it to load your organization's connectors\u001b[39m\n"
+    },
+    {
+      "task": "term-archive-needle",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 20.0,
+      "tool_calls": null,
+      "turns": 8,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-perms-exec",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 12.9,
+      "tool_calls": null,
+      "turns": 4,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-broken-symlink",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 26.0,
+      "tool_calls": null,
+      "turns": 7,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-grep-todo",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 23.9,
+      "tool_calls": null,
+      "turns": 6,
+      "check_output": "",
+      "agent_tail": ""
+    }
+  ]
+}

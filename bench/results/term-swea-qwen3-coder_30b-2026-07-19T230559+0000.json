@@ -1,0 +1,123 @@
+{
+  "harness": "swea",
+  "suite": "term",
+  "model": "qwen3-coder:30b",
+  "base_url": "http://localhost:31134/v1",
+  "max_turns": 25,
+  "task_timeout": 420,
+  "started_at": "2026-07-19T23:05:59+00:00",
+  "total_passed": 8,
+  "total_tasks": 10,
+  "results": [
+    {
+      "task": "term-log-top-ips",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 21.9,
+      "tool_calls": 6,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-crlf-script",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 13.6,
+      "tool_calls": 15,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-git-blame-hunt",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 13.6,
+      "tool_calls": 13,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-restore-deleted",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 8.0,
+      "tool_calls": 7,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-photo-rename",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 14.3,
+      "tool_calls": 12,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-dedupe-files",
+      "category": "terminal",
+      "passed": false,
+      "status": "max_turns",
+      "seconds": 24.0,
+      "tool_calls": 25,
+      "turns": null,
+      "check_output": "c2/term-dedupe-files/_verify.py\", line 10, in test_deduped\n    self.assertEqual(len(files), 22, 'should keep one file per unique content')\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 23 != 22 : should keep one file per unique content\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+      "agent_tail": "ee that there are no duplicate files in the final result, which means my deduplication script worked correctly. The original directory had 22 files and we kept all of them because they were all unique.\n\nLet me recheck what I actually did by looking at the checksums more carefully:\n\u25b6 bash {\"command\":\"cd downloads \\u0026\\u0026 find . -type f -exec md5sum {} \\\\; | sort \\u003e temp_checksums.txt\",\"timeout_s\":30}\n  \u2502 exit code: 0\n  \u2502 (no output)\n\nswea: stopped after 25 turns (raise with --max-turns)\n"
+    },
+    {
+      "task": "term-archive-needle",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 15.3,
+      "tool_calls": 14,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-perms-exec",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 6.9,
+      "tool_calls": 6,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-broken-symlink",
+      "category": "terminal",
+      "passed": false,
+      "status": "agent_error",
+      "seconds": 3.8,
+      "tool_calls": 3,
+      "turns": null,
+      "check_output": "--\nTraceback (most recent call last):\n  File \"/home/justin/.claude/jobs/d60f4ab2/tmp/term-swea-qc2/term-broken-symlink/_verify.py\", line 9, in test_symlink\n    self.assertEqual(p.resolve().name, 'v3')\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'v2' != 'v3'\n- v2\n+ v3\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (failures=1)\n",
+      "agent_tail": "13/site-packages/agents/run_internal/turn_resolution.py\", line 2105, in get_single_step_result_from_response\n    processed_response = process_model_response(\n        agent=item_agent,\n    ...<5 lines>...\n        run_config=run_config,\n    )\n  File \"/mnt/data/code/local-swe-agent/.venv/lib/python3.13/site-packages/agents/run_internal/turn_resolution.py\", line 2052, in process_model_response\n    raise ModelBehaviorError(error)\nagents.exceptions.ModelBehaviorError: Tool run not found in agent swea\n"
+    },
+    {
+      "task": "term-grep-todo",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 11.4,
+      "tool_calls": 9,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    }
+  ]
+}

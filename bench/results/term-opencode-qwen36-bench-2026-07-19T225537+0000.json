@@ -1,0 +1,123 @@
+{
+  "harness": "opencode",
+  "suite": "term",
+  "model": "qwen36-bench",
+  "base_url": "http://localhost:31134/v1",
+  "max_turns": 12,
+  "task_timeout": 420,
+  "started_at": "2026-07-19T22:55:37+00:00",
+  "total_passed": 9,
+  "total_tasks": 10,
+  "results": [
+    {
+      "task": "term-log-top-ips",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 23.7,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-crlf-script",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 19.3,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-git-blame-hunt",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 18.5,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-restore-deleted",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 24.1,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-photo-rename",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 20.2,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-dedupe-files",
+      "category": "terminal",
+      "passed": false,
+      "status": "ok",
+      "seconds": 13.1,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "):\n  File \"/home/justin/.claude/jobs/d60f4ab2/tmp/term-oc-q36/term-dedupe-files/_verify.py\", line 12, in test_deduped\n    self.assertEqual(open('answer.txt').read().strip(), '8')\n                     ~~~~^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'answer.txt'\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n",
+      "agent_tail": "s.txt\n07fb0d17e72bf70a0b41796d3217a821: 2 copies\n66050a41e47d6ff3c68196f501fe0041: 4 copies\n8eac16b4be5711df8ae229617c0d11e9: 2 copies\na07b7bee2399cacfb4ebda0ded862f63: 3 copies\nc51dbd79ae653f28ae7c40236ed73af9: 2 copies\n\u001b[0m\n\u001b[0m$ \u001b[0mcd downloads && md5sum * | sort > /tmp/hashes.txt && awk '{print $1}' /tmp/hashes.txt | uniq -d > /tmp/dup_hashes.txt && while read hash; do grep \"^$hash\" /tmp/hashes.txt | tail -n +2 | while read h f; do rm \"$f\"; done; done < /tmp/dup_hashes.txt\n(no output)\n\u001b[0m\n"
+    },
+    {
+      "task": "term-archive-needle",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 17.5,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-perms-exec",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 18.0,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-broken-symlink",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 22.9,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "term-grep-todo",
+      "category": "terminal",
+      "passed": true,
+      "status": "ok",
+      "seconds": 16.3,
+      "tool_calls": null,
+      "turns": null,
+      "check_output": "",
+      "agent_tail": ""
+    }
+  ]
+}
