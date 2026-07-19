@@ -25,6 +25,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from tasks import TASKS  # noqa: E402
 from tasks_hard import HARD_TASKS  # noqa: E402
+from tasks_term import TERM_TASKS  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 
@@ -107,6 +108,11 @@ def run_one(task, args, workdir: Path) -> dict:
         p = ws / rel
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text(content)
+    if task.setup:
+        s = subprocess.run(task.setup, shell=True, cwd=ws, capture_output=True,
+                           text=True, timeout=60)
+        if s.returncode != 0:
+            raise RuntimeError(f"setup failed for {task.id}: {(s.stdout + s.stderr)[-400:]}")
 
     cmd, cwd, env = build_invocation(task, args, ws)
     t0 = time.monotonic()
@@ -162,7 +168,7 @@ def run_one(task, args, workdir: Path) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--harness", choices=["swea", "opencode", "claude"], default="swea")
-    ap.add_argument("--suite", choices=["core", "hard", "all"], default="core")
+    ap.add_argument("--suite", choices=["core", "hard", "term", "all"], default="core")
     ap.add_argument("--base-url", required=True)
     ap.add_argument("--model", required=True)
     ap.add_argument("--max-turns", type=int, default=12)
@@ -173,7 +179,8 @@ def main() -> None:
     ap.add_argument("--workdir", help="where task workspaces live (default: temp dir)")
     args = ap.parse_args()
 
-    pool = {"core": TASKS, "hard": HARD_TASKS, "all": TASKS + HARD_TASKS}[args.suite]
+    pool = {"core": TASKS, "hard": HARD_TASKS, "term": TERM_TASKS,
+            "all": TASKS + HARD_TASKS + TERM_TASKS}[args.suite]
     if args.only:
         by_id = {t.id: t for t in pool}
         tasks = [by_id[i] for i in args.only.split(",")]

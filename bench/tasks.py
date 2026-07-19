@@ -19,6 +19,7 @@ class Task:
     files: dict[str, str]
     verify_files: dict[str, str]
     check: str = "python3 _verify.py"
+    setup: str | None = None  # shell run in the workspace before the agent starts
 
 
 def _unittest(body: str, imports: str = "") -> str:
