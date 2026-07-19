@@ -1,0 +1,311 @@
+{
+  "model": "z-ai/glm-4.7-flash",
+  "base_url": "https://openrouter.ai/api/v1",
+  "max_turns": 12,
+  "task_timeout": 300,
+  "started_at": "2026-07-19T21:03:38+00:00",
+  "total_passed": 30,
+  "total_tasks": 30,
+  "results": [
+    {
+      "task": "fix-median-sort",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 20.8,
+      "tool_calls": 7,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-sum-range",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 24.0,
+      "tool_calls": 7,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-binary-search",
+      "category": "bugfix",
+      "passed": true,
+      "status": "max_turns",
+      "seconds": 68.5,
+      "tool_calls": 13,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-mutable-default",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 17.7,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-title-case",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 12.7,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-missing-key",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 15.9,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-fib-base",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 30.1,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-int-division",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 16.1,
+      "tool_calls": 7,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-inverted-filter",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 36.5,
+      "tool_calls": 7,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "fix-chunk-slice",
+      "category": "bugfix",
+      "passed": true,
+      "status": "ok",
+      "seconds": 16.2,
+      "tool_calls": 7,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "impl-rle-encode",
+      "category": "implement",
+      "passed": true,
+      "status": "ok",
+      "seconds": 18.1,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "impl-balanced-parens",
+      "category": "implement",
+      "passed": true,
+      "status": "ok",
+      "seconds": 20.2,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "impl-roman-to-int",
+      "category": "implement",
+      "passed": true,
+      "status": "ok",
+      "seconds": 16.9,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "impl-flatten",
+      "category": "implement",
+      "passed": true,
+      "status": "ok",
+      "seconds": 11.5,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "impl-caesar",
+      "category": "implement",
+      "passed": true,
+      "status": "ok",
+      "seconds": 27.2,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "impl-word-freq",
+      "category": "implement",
+      "passed": true,
+      "status": "ok",
+      "seconds": 14.2,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "feat-dedupe-keep-last",
+      "category": "feature",
+      "passed": true,
+      "status": "ok",
+      "seconds": 24.8,
+      "tool_calls": 7,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "feat-validate-negative",
+      "category": "feature",
+      "passed": true,
+      "status": "ok",
+      "seconds": 18.5,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "feat-stack-peek",
+      "category": "feature",
+      "passed": true,
+      "status": "ok",
+      "seconds": 32.1,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "feat-parse-dates",
+      "category": "feature",
+      "passed": true,
+      "status": "ok",
+      "seconds": 19.1,
+      "tool_calls": 8,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "feat-max-key",
+      "category": "feature",
+      "passed": true,
+      "status": "ok",
+      "seconds": 15.0,
+      "tool_calls": 7,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "feat-sort-reverse-flag",
+      "category": "feature",
+      "passed": true,
+      "status": "ok",
+      "seconds": 16.3,
+      "tool_calls": 8,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "ref-rename-function",
+      "category": "refactor",
+      "passed": true,
+      "status": "ok",
+      "seconds": 25.0,
+      "tool_calls": 10,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "ref-extract-constant",
+      "category": "refactor",
+      "passed": true,
+      "status": "ok",
+      "seconds": 11.0,
+      "tool_calls": 4,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "ref-remove-dead-code",
+      "category": "refactor",
+      "passed": true,
+      "status": "ok",
+      "seconds": 13.4,
+      "tool_calls": 6,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "ref-bare-except",
+      "category": "refactor",
+      "passed": true,
+      "status": "ok",
+      "seconds": 28.3,
+      "tool_calls": 8,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "new-csv-stats",
+      "category": "scratch",
+      "passed": true,
+      "status": "ok",
+      "seconds": 36.9,
+      "tool_calls": 3,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "new-json-to-csv",
+      "category": "scratch",
+      "passed": true,
+      "status": "ok",
+      "seconds": 14.3,
+      "tool_calls": 4,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "new-wordcount-cli",
+      "category": "scratch",
+      "passed": true,
+      "status": "ok",
+      "seconds": 19.9,
+      "tool_calls": 5,
+      "check_output": "",
+      "agent_tail": ""
+    },
+    {
+      "task": "new-utils-package",
+      "category": "scratch",
+      "passed": true,
+      "status": "ok",
+      "seconds": 13.0,
+      "tool_calls": 5,
+      "check_output": "",
+      "agent_tail": ""
+    }
+  ]
+}
