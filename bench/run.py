@@ -23,7 +23,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from tasks import get_tasks  # noqa: E402
+from tasks import TASKS  # noqa: E402
+from tasks_hard import HARD_TASKS  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 
@@ -161,6 +162,7 @@ def run_one(task, args, workdir: Path) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--harness", choices=["swea", "opencode", "claude"], default="swea")
+    ap.add_argument("--suite", choices=["core", "hard", "all"], default="core")
     ap.add_argument("--base-url", required=True)
     ap.add_argument("--model", required=True)
     ap.add_argument("--max-turns", type=int, default=12)
@@ -171,7 +173,12 @@ def main() -> None:
     ap.add_argument("--workdir", help="where task workspaces live (default: temp dir)")
     args = ap.parse_args()
 
-    tasks = get_tasks(args.only.split(",") if args.only else None)
+    pool = {"core": TASKS, "hard": HARD_TASKS, "all": TASKS + HARD_TASKS}[args.suite]
+    if args.only:
+        by_id = {t.id: t for t in pool}
+        tasks = [by_id[i] for i in args.only.split(",")]
+    else:
+        tasks = list(pool)
     workdir = Path(args.workdir) if args.workdir else Path(tempfile.mkdtemp(prefix="swea-bench-"))
     started = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
@@ -197,6 +204,7 @@ def main() -> None:
 
     payload = {
         "harness": args.harness,
+        "suite": args.suite,
         "model": args.model,
         "base_url": args.base_url,
         "max_turns": args.max_turns,
@@ -207,7 +215,7 @@ def main() -> None:
         "results": results,
     }
     out = Path(args.out) if args.out else REPO / "bench" / "results" / (
-        args.harness + "-" + re.sub(r"[^A-Za-z0-9._-]+", "_", args.model)
+        args.suite + "-" + args.harness + "-" + re.sub(r"[^A-Za-z0-9._-]+", "_", args.model)
         + "-" + started.replace(":", "") + ".json"
     )
     out.parent.mkdir(parents=True, exist_ok=True)
